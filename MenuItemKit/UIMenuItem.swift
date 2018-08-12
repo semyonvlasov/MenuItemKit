@@ -22,6 +22,13 @@ public extension UIMenuItem {
   convenience init(title: String, action: @escaping MenuItemAction) {
     self.init(title: title, image: nil, action: action)
   }
+    
+  convenience init(image: UIImage, action: Selector) {
+    let title = "Image" + imageItemIdetifier
+    self.init(title: title, action: action)
+    imageBox.value = image
+  }
+
 
   @objc(mik_isMenuItemKitSelector:)
   static func isMenuItemKitSelector(_ sel: Selector) -> Bool {
